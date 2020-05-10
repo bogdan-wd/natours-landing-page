@@ -8,6 +8,16 @@
     font-size: $default-font-size;
     transform: skewX(-12deg);
 
+    @include respond(tab-port){
+        width: 100%;
+        padding: 4rem;
+        padding-left: 6rem;
+    }
+    @include respond (phone){
+        transform: skewX(0);
+    }
+
+
     &__title{
         margin-top: 5rem;
 
@@ -24,6 +34,9 @@
 
     & > * {
         transform: skewX(12deg);
+        @include respond (phone){
+            transform: skewX(0);
+        }  
     }
 
     &__shape {
@@ -31,12 +44,17 @@
         width: 15rem;
         height: 15rem;
         position: relative;
-
+        margin: 1.5rem;
         -webkit-shape-outside: circle(50% at 50% 50%);
         shape-outside: circle(50% at 50% 50%);
         -webkit-clip-path: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);
         transform: translateX(-2rem) skewX(12deg);
+
+        @include respond (phone){
+            transform: translate(-2rem) skewX(0);
+        }
+    
     }
 
     &__img {
